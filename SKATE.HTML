@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skaring — Skates</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --panel:#111213;
+      --accent:#ff7a00;
+      --danger:#d32b2b;
+      --muted:#9a9a9a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#070707 0%, #0c0c0c 100%);
+      color:#eee;
+      font-family:"Roboto",sans-serif;
+    }
+    header.site-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 28px;
+      background: linear-gradient(90deg, rgba(255,122,0,0.06), transparent);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:48px;height:48px;background:#111;border-radius:10px;display:flex;align-items:center;justify-content:center}
+    .logo svg{width:28px;height:28px}
+    .brand h1{margin:0;color:var(--accent);font-family:"Montserrat",sans-serif;font-size:20px}
+    nav.main-nav{display:flex;gap:18px}
+    nav.main-nav a{color:#ddd;text-decoration:none;font-weight:500;padding:8px 12px;border-radius:8px;transition:.2s}
+    nav.main-nav a:hover,nav.main-nav a.active{background:var(--accent);color:#100}
+    main{max-width:1100px;margin:30px auto;padding:0 20px}
+    h2{font-family:"Montserrat",sans-serif;color:#fff}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+    .card{
+      background:var(--panel);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.5);
+      transition:transform .2s;
+    }
+    .card:hover{transform:translateY(-4px)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 4px;font-size:16px;color:#fff}
+    .card p{margin:0;font-size:14px;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);margin:40px 0 20px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">
+        <!-- mini logo skate -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="1.6">
+          <circle cx="20" cy="48" r="4" fill="#ff7a00"/>
+          <circle cx="44" cy="48" r="4" fill="#ff7a00"/>
+          <rect x="12" y="28" width="40" height="8" rx="3" fill="white"/>
+        </svg>
+      </div>
+      <h1>Skaring</h1>
+    </div>
+    <nav class="main-nav">
+        <a href="cadrastro.html">Loja</a>
+        <a href="skates.html" class="active">Skates</a>
+        <a href="acessórios.html">Acessórios</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      
+  </header>
+
+  <main>
+    <h2>Nossos Skates</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1511453670214-979c4b8b6e09?w=800" alt="Skate street azul">
+        <h3>Street Azul</h3>
+        <p>Shape resistente, rodas 52mm — ideal para manobras urbanas.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Skate carbon fiber">
+        <h3>Carbon Fiber Pro</h3>
+        <p>Leve, durável e com design agressivo para competições.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504457046787-5d7d8d7b2c93?w=800" alt="Skate old school">
+        <h3>Old School Cruiser</h3>
+        <p>Clássico para passeios — estilo retrô com rodas largas.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580648672512-52f4be46a1e2?w=800" alt="Skate kids">
+        <h3>Kids Starter</h3>
+        <p>Modelo seguro e colorido para iniciantes.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <strong>Skaring</strong> — Todos os direitos reservados
+  </footer>
+</body>
+</html>
