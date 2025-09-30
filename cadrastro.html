@@ -253,37 +253,7 @@
       }
     }
 
-    /* Handler para demonstrar envio do JSON do cliente (troque a URL para a sua API) */
-    function handleSubmit(e){
-      e.preventDefault();
-      const form = document.getElementById('cadForm');
-      const data = {
-        nome: form.nome.value.trim(),
-        cpf: form.cpf.value.trim(),
-        telefone: form.telefone.value.trim(),
-        email: form.email.value.trim(),
-        data_nascimento: form.data_nascimento.value,
-        genero: form.genero.value,
-        cep: form.cep.value.replace(/\D/g,''),
-        numero: form.numero.value.trim(),
-        rua: form.rua.value.trim(),
-        bairro: form.bairro.value.trim(),
-        cidade: form.cidade.value.trim(),
-        estado: form.estado.value.trim()
-      };
-
-      // Exemplo: aqui você faria o fetch para a API que estão criando.
-      // fetch('https://sua-api-aqui/cliente', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)})
-      //   .then(resp => resp.json()).then(r => console.log(r)).catch(err => console.error(err));
-
-      console.log("JSON pronto para envio:", data);
-      alert('JSON pronto no console. Substitua o console.log pela sua chamada fetch() para enviar à API.');
-    }
-
-    // bind
-    document.addEventListener('DOMContentLoaded', function(){
-      document.getElementById('cadForm').addEventListener('submit', handleSubmit);
-    });
+    
   </script>
 </head>
 <body>
@@ -328,7 +298,7 @@
     <aside class="panel" aria-labelledby="formTitle">
       <h2 id="formTitle">Cadastrar Cliente</h2>
 
-      <form id="cadForm" novalidate>
+      <form id="cadForm">
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" required placeholder="Nome completo">
 
@@ -378,6 +348,9 @@
         <label for="estado">Estado</label>
         <input id="estado" name="estado" type="text" required placeholder="UF">
 
+        <label for="senha">senha</label>
+        <input id="senha" name="senha" type="text" required placeholder="UF">
+
         <input type="submit" value="Cadastrar Cliente">
       </form>
 
@@ -388,6 +361,6 @@
   <footer>
     © <strong>Skaring</strong> — todos os direitos reservados•
   </footer>
-
+  <script src="./cadrastro.js"></script>
 </body>
 </html>
