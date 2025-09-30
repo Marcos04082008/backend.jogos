@@ -6,7 +6,7 @@ formCliente.addEventListener("submit", async (event) => {
     const dados = pegarDadosCliente();
     
     try{
-        const resposta = fetch("http://127.0.0.1:3000/cadastrar",{
+        const resposta = await fetch("http://127.0.0.1:3000/cadastrar",{
             method:"POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(dados)
