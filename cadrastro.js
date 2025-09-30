@@ -1,10 +1,26 @@
-const formCliente = document.getElementById("form-cliente");
+const formCliente = document.getElementById("cadForm");
 
 formCliente.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const dados = pegarDadosCliente();
-    console.log(dados)
+    
+    try{
+        const resposta = fetch("http://127.0.0.1:3000/cadastrar",{
+            method:"POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(dados)
+        })
+        
+        if(!resposta.ok) {
+            throw new Error("Erro na API")
+        }
+
+        alert("Cadastro realizado com sucesso!")
+        formCliente.reset()
+    } catch (error) {
+        alert("Erro ao cadastrar cliente: " + error)
+    }
 })
 
 function pegarDadosCliente(){
@@ -18,7 +34,7 @@ function pegarDadosCliente(){
     cliente.n_casa = document.getElementById("numero").value
     cliente.bairro = document.getElementById("bairro").value
     cliente.cidade = document.getElementById("cidade").value
-    cliente.uf = document.getElementById("uf").value
+    cliente.uf = document.getElementById("estado").value
     cliente.senha = document.getElementById("senha").value
     return cliente
-}
+} 
